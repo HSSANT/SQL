@@ -1,0 +1,42 @@
+--Tipos de converções de data
+--Dias da semana
+
+--1 dia da semana por extenso
+Select to_char(sysdate,'Day') from dual;
+
+--2 numero do dia da semana
+Select to_char(sysdate,'d') from dual;
+
+--3 abreviado
+select to_char(sysdate,'Dy')from dual;
+
+--4 dia ano mes formato
+select to_char(sysdate,'DD/MM/YYYY Day')from dual;
+
+--RESUMO DO SYSDATE
+--D dia
+--d dia da semana numero
+--Day dia da semana por extenso
+--Dy dia da semana abreviado
+--M mes
+--MONTH mes por extenso
+--Y ano
+--YEAR ANO POR EXTENSO(EM INGLES)
+--H hora
+--m minuto
+--s segundo
+
+--EXEMPLO
+set serveroutput on;
+declare
+v_data varchar(100);
+dt_data date;
+begin
+v_data :='01/01/2017';
+--de varchar para data
+dt_data:=TO_DATE(v_data,'MM/DD/YYYY');
+dbms_output.put_line(v_data);
+--de data para varchar
+v_data := TO_CHAR(dt_data,'MM/DD/YYYY');
+dbms_output.put_line(v_data);
+end;
