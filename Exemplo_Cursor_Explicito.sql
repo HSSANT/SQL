@@ -1,12 +1,12 @@
 DECLARE 
-    CURSOR C_RM_77286 IS
+    CURSOR C_RM_75542 IS
     SELECT * FROM PF0064.LOC_ITEM_LOCACAO;
-    V_RM_77286 C_RM_77286%ROWTYPE;
+    V_RM_75542 C_RM_75542%ROWTYPE;
     
 BEGIN   
-        OPEN C_RM_77286;
+        OPEN C_RM_75542;
         LOOP
-            FETCH  C_RM_77286 INTO V_RM_77286; 
+            FETCH  C_RM_75542 INTO V_RM_75542; 
                 EXIT WHEN C_RM_77286%NOTFOUND;
                     INSERT INTO  LOC_ITEM_LOCACAO_STG( 
                     DT_RETIRADA,  
@@ -20,14 +20,14 @@ BEGIN
                     DT_CARGA)	
                     
                     VALUES (                   
-                    V_RM_77286.DT_RETIRADA,  
-                    V_RM_77286.NR_ITEM,        
-                    V_RM_77286.DT_ENTREGA,      
-                    V_RM_77286.QT_DIAS,         
-                    V_RM_77286.VL_LOCACAO,          
-                    V_RM_77286.NR_PLACA,            
-                    V_RM_77286.VL_TOTAL,             
-                    V_RM_77286.NR_PEDIDO,            
+                    V_RM_75542.DT_RETIRADA,  
+                    V_RM_75542.NR_ITEM,        
+                    V_RM_75542.DT_ENTREGA,      
+                    V_RM_75542.QT_DIAS,         
+                    V_RM_75542.VL_LOCACAO,          
+                    V_RM_75542.NR_PLACA,            
+                    V_RM_75542.VL_TOTAL,             
+                    V_RM_75542.NR_PEDIDO,            
                     SYSDATE
                     );
         END LOOP;
